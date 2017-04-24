@@ -1,3 +1,5 @@
+ /*jshint esversion: 6*/
+
 const users = {
   '1': { name: 'Alice', age: 12, gender: 'f', jobType: 'st' },
   '2': { name: 'Bob', age: 21, gender: 'm', jobType: 'dv' },
@@ -20,26 +22,62 @@ const employer = {
 };
 
 function byId(id) {
-
+  return users[id];
 }
 
 function youngest() {
+  let youngestUser = users['1'];
+  Object.keys(users).forEach(function(key,index){
+    let young = users[key].age;
 
+      if(users[key].age < youngestUser.age  ){
+        youngestUser = users[key];
+      }
+   });
+  return youngestUser;
 }
 
 function oldest() {
+  let oldestUser = users['1'];
+   Object.keys(users).forEach(function(key,index){
+      let young = users[key].age;
 
+      if(users[key].age > oldestUser.age  ){
+        oldestUser = users[key];
+      }
+   });
+  return oldestUser;
 }
 
 function males () {
-
+  let males = [];
+  Object.keys(users).forEach(function(key,index){
+    if(users[key].gender === 'm'  ){
+        males.push(users[key]);
+      }
+   });
+    return males;
 }
 
 function females() {
-
+  let females = [];
+  Object.keys(users).forEach(function(key,index){
+    if(users[key].gender === 'f'  ){
+        females.push(users[key]);
+      }
+   });
+  return females;
 }
 
 function employees(employer) {
+  let employed = [];
+
+  Object.keys(users).forEach(function(key,index){
+    if(users[key].jobType === emp  ){
+      employed.push(users[key]);
+    }
+ });
+   return employed;
 
 }
 
