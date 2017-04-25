@@ -81,6 +81,14 @@ function employees(employer) {
 
 }
 
+//SUPER STRETCH GOAL
+function groupEmployees(){
+   let group = [
+    'st': [ads],
+
+  ];
+}
+
 const functions = {
   byId: byId,
   youngest: youngest,
